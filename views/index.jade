@@ -1,11 +1,23 @@
 extends layout
 
 block content
-  div.container
+  div.container.left-div
     form.form-signin
       h2.form-signin-heading Please sign in
       label.sr-only Email address
       input.form-control(type="email" id="inputEmail" placeholder="Email address" required autofocus)
       label.sr-only Password
       input.form-control(type="password" id="inputPassword" placeholder="Password" required)
+      button.btn.btn-lg.btn-primary.btn-block(type="submit") Sign in
+  div.container.right-div
+    form.form-signin
+      h2.form-signin-heading Please register
+      label.sr-only Full name
+      input.form-control(type="text" id="inputUsername" placeholder="Full name" required)
+      label.sr-only Email address
+      input.form-control(type="email" id="inputEmail" placeholder="Email address" required)
+      label.sr-only Password
+      input.form-control(type="password" id="inputPassword" placeholder="Password" required)
+      label.sr-only Repeat password
+      input.form-control(type="password" id="inputRepeatPassword" placeholder="Repeat password" required)
       button.btn.btn-lg.btn-primary.btn-block(type="submit") Sign in

@@ -45,3 +45,13 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+.left-div{
+  float: left;
+  width: 50% !important;
+}
+
+.right-div {
+  float: right;
+  width: 50% !important;
+}
