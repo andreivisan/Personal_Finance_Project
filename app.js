@@ -11,7 +11,14 @@ var localStrategy = require('passport-local');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+var configDB = require('./config/database.js');
+
 var app = express();
+
+//configuration
+mongoose.connect(configDB.url);
+
+// require('./config/passport')(passport); //pass passport for configuration
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -32,11 +39,27 @@ app.use('/', routes);
 app.use('/dashboard', routes);
 app.use('/users', users);
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
+// Session-persisted message middleware
+app.use(function(req, res, next){
+  var err = req.session.error;
+  var msg = req.session.notice;
+  var success = req.session.success;
+
+  delete req.session.error;
+  delete req.session.success;
+  delete req.session.notice;
+
+  if (err) {
+    res.locals.error = err;
+  }
+  if (msg) {
+    res.locals.notice = msg;
+  }
+  if (success) {
+    res.locals.success = success;
+  }
+
+  next();
 });
 
 // error handlers
