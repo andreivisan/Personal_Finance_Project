@@ -7,9 +7,9 @@ block content
     form.form-signin(action='/login' method='post')
       h2.form-signin-heading Please sign in
       label.sr-only Email address
-      input.form-control(type="email" id="inputEmail" placeholder="Email address" required autofocus)
+      input.form-control(type="email" id="email" name="email" placeholder="Email address" required autofocus)
       label.sr-only Password
-      input.form-control(type="password" id="inputPassword" placeholder="Password" required)
+      input.form-control(type="password" id="password" name="password" placeholder="Password" required)
       button.btn.btn-lg.btn-primary.btn-block(type="submit") Sign in
   div.container.right-div
     if message.length > 0
@@ -17,11 +17,11 @@ block content
     form.form-signin(action='/signup', method='post')
       h2.form-signin-heading Please register
       label.sr-only Full name
-      input.form-control(type="text" id="suInputUsername" placeholder="Full name" required)
+      input.form-control(type="text" id="suInputUsername" name="fullName" placeholder="Full name" required)
       label.sr-only Email address
-      input.form-control(type="email" id="suInputEmail" placeholder="Email address" required)
+      input.form-control(type="email" id="suInputEmail" name="email" placeholder="Email address" required)
       label.sr-only Password
-      input.form-control(type="password" id="suInputPassword" placeholder="Password" required)
+      input.form-control(type="password" id="suInputPassword" name="password" placeholder="Password" required)
       label.sr-only Repeat password
-      input.form-control(type="password" id="suInputRepeatPassword" placeholder="Repeat password" required)
+      input.form-control(type="password" id="suInputRepeatPassword" name="repeatPassword" placeholder="Repeat password" required)
       button.btn.btn-lg.btn-primary.btn-block(type="submit") Sign in

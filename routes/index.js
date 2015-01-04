@@ -1,4 +1,5 @@
 var express = require('express');
+var passport = require('passport');
 var router = express.Router();
 
 /* GET home page. */
@@ -20,7 +21,11 @@ router.get('/signup', function(req, res) {
 });
 
 // process the signup form
-// router.post('/signup', do all our passport stuff here);
+router.post('/signup', passport.authenticate('local-signup', {
+  successRedirect: '/dashboard',
+  failureRedirect: '/signup',
+  failureFlash: true
+}));
 
 /* GET dashboard. */
 router.get('/dashboard', function(req, res) {
