@@ -15,8 +15,6 @@ var users = require('./routes/users');
 
 var configDB = require('./config/database.js');
 
-var authenticationUtils = require('./lib/middleware/authenticationUtils.js');
-
 var app = express();
 
 //configuration
@@ -39,7 +37,6 @@ app.use(session({secret: 'cybermaster', saveUninitialized: true, resave: true}))
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
-app.use(authenticationUtils);
 
 app.use('/', routes);
 app.use('/dashboard', routes);
