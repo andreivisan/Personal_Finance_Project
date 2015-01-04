@@ -7,11 +7,15 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var passport = require('passport');
 var localStrategy = require('passport-local');
+var flash = require('connect-flash');
+var mongoose = require('mongoose');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var configDB = require('./config/database.js');
+
+var authenticationUtils = require('./lib/middleware/authenticationUtils.js');
 
 var app = express();
 
@@ -34,6 +38,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({secret: 'cybermaster', saveUninitialized: true, resave: true}));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
+app.use(authenticationUtils);
 
 app.use('/', routes);
 app.use('/dashboard', routes);
