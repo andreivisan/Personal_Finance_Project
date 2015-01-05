@@ -4,12 +4,12 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Sign In', message: req.flash('loginMessage') });
+  res.render('index', { title: 'Sign In', loginMessage: req.flash('loginMessage'), signupMessage: req.flash('signupMessage') });
 });
 
 router.get('/login', function(req, res) {
   // render the page and pass in any flash data if it exists
-  res.render('index', { title: 'Sign In', message: req.flash('loginMessage') });
+  res.render('index', { title: 'Sign In' });
 });
 
 // process the login form
@@ -21,7 +21,7 @@ router.post('/login', passport.authenticate('local-login', {
 
 router.get('/signup', function(req, res) {
   // render the page and pass in any flash data if it exists
-  res.render('index', { title: 'Sign In', message: req.flash('signupMessage') });
+  res.render('index', { title: 'Sign In' });
 });
 
 // process the signup form

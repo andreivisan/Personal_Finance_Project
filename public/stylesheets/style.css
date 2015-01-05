@@ -55,3 +55,18 @@ body {
   float: right;
   width: 50% !important;
 }
+
+.btn-flat-blue {
+  color: #0F8ED1;
+  background: rgba(0,0,0,0);
+  border: solid 2px #0F8ED1;
+  width: 100%;
+  font-size: 20px;
+  padding: 5px;
+}
+
+.btn-flat-blue:hover,
+.btn-flat-blue.hover {
+  border-color: #1480C9;
+  color: #1480C9;
+}

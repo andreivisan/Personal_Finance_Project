@@ -2,26 +2,26 @@ extends layout
 
 block content
   div.container.left-div
-    if message.length > 0
-      div #{message}
+    if loginMessage.length > 0
+      div.alert.alert-danger #{loginMessage}
     form.form-signin(action='/login' method='post')
       h2.form-signin-heading Please sign in
       label.sr-only Email address
-      input.form-control(type="email" id="email" name="email" placeholder="Email address" required autofocus)
+      input.form-control(type="email" id="email" name="email" placeholder="Email address" required="true" autofocus)
       label.sr-only Password
-      input.form-control(type="password" id="password" name="password" placeholder="Password" required)
-      button.btn.btn-lg.btn-primary.btn-block(type="submit") Sign in
+      input.form-control(type="password" id="password" name="password" placeholder="Password" required="true")
+      button.btn-flat-blue(type="submit") Sign in
   div.container.right-div
-    if message.length > 0
-      div #{message}
+    if signupMessage.length > 0
+      div.alert.alert-danger #{signupMessage}
     form.form-signin(action='/signup', method='post')
       h2.form-signin-heading Please register
       label.sr-only Full name
-      input.form-control(type="text" id="suInputUsername" name="fullName" placeholder="Full name" required)
+      input.form-control(type="text" id="suInputUsername" name="fullName" placeholder="Full name" required="true")
       label.sr-only Email address
-      input.form-control(type="email" id="suInputEmail" name="email" placeholder="Email address" required)
+      input.form-control(type="email" id="suInputEmail" name="email" placeholder="Email address" required="true")
       label.sr-only Password
-      input.form-control(type="password" id="suInputPassword" name="password" placeholder="Password" required)
+      input.form-control(type="password" id="suInputPassword" name="password" placeholder="Password" required="true")
       label.sr-only Repeat password
-      input.form-control(type="password" id="suInputRepeatPassword" name="repeatPassword" placeholder="Repeat password" required)
-      button.btn.btn-lg.btn-primary.btn-block(type="submit") Sign in
+      input.form-control(type="password" id="suInputRepeatPassword" name="repeatPassword" placeholder="Repeat password" required="true")
+      button.btn-flat-blue(type="submit") Sign up
