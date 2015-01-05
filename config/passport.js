@@ -26,6 +26,11 @@ module.exports = function(passport) {
           return done(err);
         }
 
+        var repeatedPassword = req.body.repeatPassword;
+        if(password != repeatedPassword) {
+          return done(null, false, req.flash('signupMessage', 'Passwords don\'t match.'));
+        }
+
         if (user) {
           return done(null, false, req.flash('signupMessage', 'That email is already taken.'));
         } else {
