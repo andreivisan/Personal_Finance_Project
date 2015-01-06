@@ -12,6 +12,8 @@ block content
         a.navbar-brand(href="#") Personal finances
       div#navbar.navbar-collapse.collapse
         ul.nav.navbar-nav.navbar-right
+          li 
+            a(href="#") Welcome, #{user.fullName}
           li
             a(href="#") Dashboard
           li
@@ -20,6 +22,8 @@ block content
             a(href="#") Profile
           li
             a(href="#") Help
+          li
+            a(href="/logout") Logout
         form.navbar-form.navbar-right
           input.form-control(type="text" placeholder="Search...")
 
@@ -37,7 +41,11 @@ block content
           li
             a(href="#") FORECAST
           li
-            a(href="#") ACCOUNTS
+            span.shifter-handle ACCOUNTS
+      div.shifter-page
+        article.row.page
+          div.mobile-full.tablet-full.desktop-8.desktop-push-2
+            h2 ACCOUNTS
       div.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
         h1.page-header DASHBOARD
         h2.sub-header TRANSACTIONS
@@ -93,3 +101,5 @@ block content
                   td ipsum
                   td dolor
                   td sit
+    script
+      $(document).ready(function() {$.shifter({maxWidth: Infinity});});

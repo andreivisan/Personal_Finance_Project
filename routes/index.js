@@ -33,7 +33,7 @@ router.post('/signup', passport.authenticate('local-signup', {
 
 /* GET dashboard. */
 router.get('/dashboard', isLoggedIn, function(req, res) {
-  res.render('dashboard', { title: 'Dashboard' });
+  res.render('dashboard', { title: 'Dashboard', user:req.user });
 });
 
 router.get('/logout', function(req, res) {
