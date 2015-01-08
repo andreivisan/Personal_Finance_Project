@@ -97,3 +97,8 @@ body {
   display: inline-block;
   border-radius: 50%;
 }
+
+.accounts-drawer {
+  top: 50px !important;
+  margin-left: 16.6667%;
+}
