@@ -113,3 +113,39 @@ body {
   color: #36c0ff;
   float: right;
 }
+
+.add-account-modal-header {
+  background-color: #36C0FF;
+  border-color: #36C0FF !important;
+  color: white !important;
+}
+
+.add-account-modal-input-label {
+  color: #606472;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.add-account-modal-input {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #d0d0f0;
+  font-style: italic;
+}
+
+.add-account-modal-content-margin {
+  margin-top: 15px;
+  margin-bottom: 100px;
+}
+
+.float-left {
+  float: left;
+}
+
+.add-account-modal-footer {
+  border-color: white !important;
+}
+
+.modal-overflow-visible {
+  overflow: visible !important;
+}

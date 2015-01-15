@@ -1,12 +1,25 @@
 div.modal.fade(id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
   div.modal-dialog
     div.modal-content
-      div.modal-header
+      div.modal-header.add-account-modal-header
         button.close(type="button" data-dismiss="modal" aria-label="Close")
           span(aria-hidden="true") &times;
-        h4#myModalLabel.modal-title Modal title
-      div.modal-body
-        span BLA BLA BLA
-      div.modal-footer
+        h4#myModalLabel.modal-title ADD ACCOUNT
+      div.modal-body.modal-overflow-visible
+        form(action='/addAccount', method='post')
+          div.add-account-modal-input-label FINANCIAL INSTITUTION
+          input.add-account-modal-input(type="text", placeholder="Name of bank or credit card")
+          div.add-account-modal-content-margin
+            div.float-left
+              div.add-account-modal-input-label ACCOUNT TYPE
+              div.dropdown
+                button.btn.btn-default.dropdown-toggle(type="button" id="addAccountModalTypeSelect" data-toggle="dropdown" aria-expanded="true") TYPE
+                  span.caret
+                ul.dropdown-menu(role="menu" aria-labelledby="addAccountModalTypeSelect")
+                  li(role="presentation")
+                    a(role="menuitem" tabindex="-1" href="#") Test 1
+                  li(role="presentation")
+                    a(role="menuitem" tabindex="-1" href="#") Test 2
+      div.modal-footer.add-account-modal-footer
         button.btn.btn-default(type="button" data-dismiss="modal") Close
         button.btn.btn-primary(type="button") Save changes
