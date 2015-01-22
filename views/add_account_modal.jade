@@ -12,14 +12,10 @@ div.modal.fade(id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal
           div.add-account-modal-content-margin
             div.float-left
               div.add-account-modal-input-label ACCOUNT TYPE
-              div.dropdown
-                button.btn.btn-default.dropdown-toggle(type="button" id="addAccountModalTypeSelect" data-toggle="dropdown" aria-expanded="true") TYPE
-                  span.caret
-                ul.dropdown-menu(role="menu" aria-labelledby="addAccountModalTypeSelect")
-                  li(role="presentation")
-                    a(role="menuitem" tabindex="-1" href="#") Test 1
-                  li(role="presentation")
-                    a(role="menuitem" tabindex="-1" href="#") Test 2
+              select.selectpicker
+                option Mustard
+                option Ketchup
+                option Relish
       div.modal-footer.add-account-modal-footer
         button.btn.btn-default(type="button" data-dismiss="modal") Close
         button.btn.btn-primary(type="button") Save changes
